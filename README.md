@@ -21,10 +21,10 @@ Some conventional caller ID and spam-blocking applications ask for access to you
 Callro makes its blocking decisions on the device:
 
 - **Native Telecom Integration:** Uses Android's call screening role (`ROLE_CALL_SCREENING`) and the `CallScreeningService` API to evaluate incoming calls in real time before the phone rings.
-- **Carrier Verification Status:** Reads the carrier's STIR/SHAKEN verification status (Passed, Failed, or Unverified) as reported by Android.
-- **Dynamic Neighbor Spoofing Detection:** Identifies programmatic exchange spoofing patterns locally.
-- **Fortress Mode:** Fortress Mode silences unknown callers, while your contacts, your allowlist, and a few trusted exceptions such as emergency services still ring.
-- **Absolute Privacy Isolation:** **Contacts, call logs, and audio never leave the device.**
+- **Carrier Verification Status:** On Android 11 and newer, reads the carrier's STIR/SHAKEN verification status (Passed, Failed, or Unverified) as reported by Android.
+- **Neighbor Spoofing Detection:** Flags calls that imitate your area code and exchange, on the device.
+- **Fortress Mode:** Silences callers who aren't in your contacts, except emergency callbacks, your allowlist, numbers you've called, quick callbacks, and verified local medical facilities.
+- **Privacy:** Contacts, call logs, and audio never leave the device.
 
 ---
 
