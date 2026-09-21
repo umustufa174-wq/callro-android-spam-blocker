@@ -11,26 +11,26 @@
 
 ## The Problem with Legacy Call Blockers
 
-Most conventional caller ID and spam blocking applications operate on an invasive data-harvesting model:
-- They require full read access to your address book.
-- They upload personal contacts, phone numbers, and names to centralized crowd-sourced reverse-lookup registries.
-- Users inadvertently sacrifice their family’s and contacts' privacy just to filter spam calls.
+Some conventional caller ID and spam-blocking applications ask for access to your address book to build their lookup databases:
+- They may request read access to your contacts.
+- Some upload contact data to centralized, crowd-sourced reverse-lookup registries.
+- Users can end up trading their contacts' privacy for spam filtering.
 
 ## The Callro Architecture
 
-Callro operates on a strict **on-device architecture**:
+Callro makes its blocking decisions on the device:
 
-- **Native Telecom Integration:** Interfaces directly with Android's official `ROLE_CALL_SCREENING` and `CallScreeningService` APIs to evaluate incoming calls in real time before the phone rings.
-- **Cryptographic Carrier Attestation:** Evaluates STIR/SHAKEN digital certificates (Full A-level attestation vs. gateway spoofing) directly on the handset.
+- **Native Telecom Integration:** Uses Android's call screening role (`ROLE_CALL_SCREENING`) and the `CallScreeningService` API to evaluate incoming calls in real time before the phone rings.
+- **Carrier Verification Status:** Reads the carrier's STIR/SHAKEN verification status (Passed, Failed, or Unverified) as reported by Android.
 - **Dynamic Neighbor Spoofing Detection:** Identifies programmatic exchange spoofing patterns locally.
-- **Fortress Mode:** An accessible toggle designed to protect seniors and vulnerable families from Medicare scams and imposter fraud by allowing only verified contacts to ring the handset.
+- **Fortress Mode:** Fortress Mode silences unknown callers, while your contacts, your allowlist, and a few trusted exceptions such as emergency services still ring.
 - **Absolute Privacy Isolation:** **Contacts, call logs, and audio never leave the device.**
 
 ---
 
 ## Availability & Pricing
 
-Callro is available for Android smartphones worldwide on the **[Google Play Store](https://play.google.com/store/apps/details?id=com.vindication.callro)**.
+Callro is available for Android smartphones in the United States on the **[Google Play Store](https://play.google.com/store/apps/details?id=com.vindication.callro)**.
 
 - **Pricing:** $9.99 / month
 - **Trial:** 7-day free trial with no credit card required
